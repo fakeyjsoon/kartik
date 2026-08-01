@@ -13,9 +13,9 @@ class orDer: ObservableObject {
     @Published var GRABdelIvErYMOdE: Int = 0      // 0 standard, 1 express, 2 self pickup
     @Published var cart: [Drink] = []
     @Published var ordersss: [DATA] = []
-    @Published var is🪵in = false
+    @Published var isloggedin = false
     @Published var userTier: Int = 0          // 0 none, 1 silver, 2 gold
-    
+
     var lastOrderID: Int = 0
     var menu = makeSampleMenu()
     
