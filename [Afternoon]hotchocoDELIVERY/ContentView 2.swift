@@ -10,122 +10,13 @@ struct ContentView: View {
     @EnvironmentObject var bryanstore: orDer
     
     @State var searchText = ""
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @State var selectedTab = 0
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @State var showingCart = false
-    
-    
-    
-    
-    
-    
-    
     @State var showingSettings = false
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @State var showingProfile = false
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @State var showingDetail = false
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @State var isLoading = false
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @State var hasError = false
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @State var errorMessage = ""
     @State var selectedDrinkIndex = 0
     @State var sugarLevel = 2
@@ -136,35 +27,12 @@ struct ContentView: View {
     @State var toppingCinnamon = false
     @State var tipAmount = 0.0
     @State var scheduledDelivery = false
-    
-    
-    
     @State var scheduledDate = Date()
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @State var paymentMethod = 0
-    
-    
     @State var agreedToTerms = false
     @State var orderPlaced = false
     @State var bannerOffset = 0.0
     @State var refreshToggle = false
-    
-    
-    
-    
-    
-    
-    
-    
-    
     var body: some View {
         NavigationView {
             ZStack {
