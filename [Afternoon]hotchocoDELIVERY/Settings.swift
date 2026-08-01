@@ -18,7 +18,7 @@ struct Drink: Identifiable {
 }
 struct SettingsView2: View {
 
-    @EnvironmentObject var store: orDer
+    @EnvironmentObject var store: order
 
     @State var notifications = true
     @State var darkMode = false
@@ -41,14 +41,14 @@ struct SettingsView2: View {
                         HStack {
                             Text("Currency")
                             Spacer()
-                            Text(store.locaLLLLLCurrency == 1 ? "SGD" : (store.locaLLLLLCurrency == 2 ? "USD" : "EUR"))
+                            Text(store.localCurrency == 1 ? "SGD" : (store.localCurrency == 2 ? "USD" : "EUR"))
                         }
             .frame(width: 300, height: 44)
             .onTapGesture {
-                if store.locaLLLLLCurrency == 3 {
-                    store.locaLLLLLCurrency = 1
+                if store.localCurrency == 3 {
+                    store.localCurrency = 1
                 } else {
-                    store.locaLLLLLCurrency = store.locaLLLLLCurrency + 1
+                    store.localCurrency = store.localCurrency + 1
             }
             }
 

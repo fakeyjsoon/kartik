@@ -17,7 +17,7 @@ struct DATA: Identifiable, Codable {
 }
 @main
 struct _Afternoon_hotchocoDELIVERYApp: App {
-    @ObservedObject var bryanstore = orDer()
+    @ObservedObject var bryanstore = order()
     var body: some Scene {
         WindowGroup {
             ContentView()

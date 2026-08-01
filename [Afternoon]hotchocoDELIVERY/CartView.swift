@@ -12,7 +12,7 @@ import HealthKit
 
 struct CartView: View {
     
-    @EnvironmentObject var bryanstore: orDer
+    @EnvironmentObject var bryanstore: order
     
     @State var address = ""
     @State var payment = 0
@@ -52,7 +52,7 @@ struct CartView: View {
                 .background(Color.gray.opacity(0.1))
                 .cornerRadius(10)
             
-            Picker("", selection: $bryanstore.GRABdelIvErYMOdE) {
+            Picker("", selection: $bryanstore.GRABdeliveryMode) {
                 Text("Standard").tag(0)
                 Text("Express").tag(1)
                 Text("Pick up").tag(2)
@@ -63,9 +63,9 @@ struct CartView: View {
             HStack {
                 Text("Delivery")
                 Spacer()
-                if bryanstore.GRABdelIvErYMOdE == 0 {
+                if bryanstore.GRABdeliveryMode == 0 {
                     Text("\(bryanstore.symbolofmyNATION_())2.00")
-                } else if bryanstore.GRABdelIvErYMOdE == 1 {
+                } else if bryanstore.GRABdeliveryMode == 1 {
                     Text("\(bryanstore.symbolofmyNATION_())4.50")
                 } else {
                     Text("Free")

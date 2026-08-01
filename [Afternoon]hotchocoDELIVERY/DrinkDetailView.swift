@@ -7,7 +7,7 @@ import SwiftUI
 
 struct DrinkDetailView: View {
     
-    @EnvironmentObject var store: orDer
+    @EnvironmentObject var store: order
     @Environment(\.presentationMode) var presentationMode
     
     @State var item: Drink

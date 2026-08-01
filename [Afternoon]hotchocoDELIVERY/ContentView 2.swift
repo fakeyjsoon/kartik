@@ -7,7 +7,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var bryanstore: orDer
+    @EnvironmentObject var bryanstore: order
     
     @State var searchText = ""
     @State var selectedTab = 0
