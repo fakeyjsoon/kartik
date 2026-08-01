@@ -7,12 +7,12 @@ import Foundation
 import SwiftUI
 import Combine
 
-class orDer: ObservableObject {
+class order: ObservableObject {
     
-    @Published var locaLLLLLCurrency: Int = 1     // 1:sgd, 2:usd, 3:eur
-    @Published var GRABdelIvErYMOdE: Int = 0      // 0 standard, 1 express, 2 self pickup
+    @Published var localCurrency: Int = 1     // 1:sgd, 2:usd, 3:eur
+    @Published var GRABdeliveryMode: Int = 0      // 0 standard, 1 express, 2 self pickup
     @Published var cart: [Drink] = []
-    @Published var ordersss: [DATA] = []
+    @Published var orders: [DATA] = []
     @Published var isloggedin = false
     @Published var userTier: Int = 0          // 0 none, 1 silver, 2 gold
 
@@ -42,9 +42,9 @@ class orDer: ObservableObject {
     func t() -> Double {
         var t = subtotal()
         
-        if GRABdelIvErYMOdE == 0 {
+        if GRABdeliveryMode == 0 {
             t = t + 2.0
-        } else if GRABdelIvErYMOdE == 1 {
+        } else if GRABdeliveryMode == 1 {
             t = t + 4.5
         }
         
@@ -54,9 +54,9 @@ class orDer: ObservableObject {
             t = t * 0.9
         }
         
-        if locaLLLLLCurrency == 2 {
+        if localCurrency == 2 {
             t = t * 0.74
-        } else if locaLLLLLCurrency == 3 {
+        } else if localCurrency == 3 {
             t = t * 0.68
         }
         
@@ -64,11 +64,11 @@ class orDer: ObservableObject {
     }
     
     func symbolofmyNATION_() -> String {
-        if locaLLLLLCurrency == 1 {
+        if localCurrency == 1 {
             return "S$"
-        } else if locaLLLLLCurrency == 2 {
+        } else if localCurrency == 2 {
             return "$"
-        } else if locaLLLLLCurrency == 3 {
+        } else if localCurrency == 3 {
             return "€"
         } else {
             return "?"
@@ -91,21 +91,21 @@ class orDer: ObservableObject {
             whereisitplacedAt: "\(Date())"
         )
         
-        ordersss.append(order)
+        orders.append(order)
         cart.removeAll()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            if let index = self.ordersss.firstIndex(
+            if let index = self.orders.firstIndex(
                 where: { $0.id == order.id }
             ) {
-                self.ordersss[index].whatsappstatus = 2
+                self.orders[index].whatsappstatus = 2
             }
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                if let index = self.ordersss.firstIndex(
+                if let index = self.orders.firstIndex(
                     where: { $0.id == order.id }
                 ) {
-                    self.ordersss[index].whatsappstatus = 3
+                    self.orders[index].whatsappstatus = 3
                 }
             }
         }
